@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Wilmington oil refineries</title>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+<link type="text/css" rel="stylesheet" href="https://static-01-www.publicintegrity.org/files/css/css_87lQy8jg9CO8A0gDGkcMmXZ1TLokElBJX3hSS9y0o-Y.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://static-01-www.publicintegrity.org/files/css/css_RF40MzGmt1z7GjMZ3O7HdAYvFAadh30O4llmRpg5lXw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://static-01-www.publicintegrity.org/files/css/css_waecEipJ-ge0SG7miDOvllB66n0H0U0uMZh523Zk8Ac.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://static-01-www.publicintegrity.org/files/css/css_FHXAPtlfTarNyOLfyiy2d1YuPUWtZNWGSm2HfDkOiHA.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://static-01-www.publicintegrity.org/sites/publici/modules/marketing/css/signup-form-collapsed.css?orrh91" media="all" />
+<link type="text/css" rel="stylesheet" href="https://static-01-www.publicintegrity.org/files/css/css_8hU3VF9C0nGaGbOzWpI6XB6x-nc2OlVfmL0Em6CGrO0.css" media="all" />
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw==" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js" integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA==" crossorigin=""></script>
+
+<script type="text/javascript" src="https://use.typekit.com/wtj1rji.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+try{Typekit.load();}catch(e){}
+//--><!]]>
+</script>
+
+<style>
+.californiaPollutionMap {
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.californiaPollutionMap h2 {
+	padding-bottom: 8px;
+}
+.californiaPollutionMap p {
+	margin-bottom: 0;
+	padding-bottom: 10px;
+}
+#map { width: 100%; height: 600px; }
+.info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; } .info h4 { margin: 0 0 5px; color: #777; }
+.legend { text-align: left; line-height: 18px; color: #555; } .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }</style>
+
+</head>
+<body>
+
+<div class="californiaPollutionMap">
+
+<h2>Wilmington oil refineries</h2>
+
+<p>The map shows the oil refineries in Wilmington and emissions they produce.</p>
+<div id='map'></div>
+
+</div>
+
+<script type="text/javascript" src="cali.js"></script>
+
+<script type="text/javascript">
+
+	var map = L.map('map').setView([33.826667, -118.271225], 12);
+
+	L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+				maxZoom: 18, minZoom: 12, attribution: 'Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' +
+			'<a href="https://carto.com/attribution">CARTO</a>'
+			}).addTo(map);
+
+	// var oilrefinery = L.icon({
+  //       iconUrl: '17478-200.png',
+  //       iconSize: [25, 40], // size of the icon
+  //       });
+
+// // markers for refineries
+// var marker = L.marker([33.774469, -118.290696], {icon: oilrefinery}).addTo(map);
+// marker.bindPopup("<b>Phillips 66 - Wilmington</b> </br> Toxics Release Inventory air emissions 2015: </br> 266,002 pounds </br> Greenhouse gas emissions 2015: </br> 1,909,865 metric tons");
+
+var circle = L.circle([33.774469, -118.290696], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 300
+}).addTo(map);
+circle.bindPopup("<b>Phillips 66 - Wilmington</b> </br> Toxics Release Inventory air emissions 2015: </br> 266,002 pounds </br> Greenhouse gas emissions 2015: </br> 1,909,865 metric tons");
+
+
+// var marker = L.marker([33.81323, -118.24298], {icon: oilrefinery}).addTo(map);
+// marker.bindPopup("<b>Tesoro Carson Refinery (formerly BP)</b></br> Toxics Release Inventory air emissions 2015: </br> 842,703 pounds </br> Greenhouse gas emissions 2015: </br> 5,992,217 metric tons");
+
+var circle = L.circle([33.81323, -118.24298], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 900
+}).addTo(map);
+circle.bindPopup("<b>Tesoro Carson Refinery (formerly BP)</b></br> Toxics Release Inventory air emissions 2015: </br> 842,703 pounds </br> Greenhouse gas emissions 2015: </br> 5,992,217 metric tons");
+
+
+// var marker = L.marker([33.791344, -118.238277], {icon: oilrefinery}).addTo(map);
+// marker.bindPopup("<b>Tesoro Wilmington Refinery</b> </br> Toxics Release Inventory air emissions 2015: </br> 999 pounds </br> Greenhouse gas emissions 2015: </br> no emissions");
+
+var circle = L.circle([33.791344, -118.238277], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 100
+}).addTo(map);
+circle.bindPopup("<b>Tesoro Wilmington Refinery</b> </br> Toxics Release Inventory air emissions 2015: </br> 999 pounds </br> Greenhouse gas emissions 2015: </br> no emissions");
+
+
+// var marker = L.marker([33.908126, -118.41074], {icon: oilrefinery}).addTo(map);
+// marker.bindPopup("<b>Chevron</b></br> Toxics Release Inventory air emissions 2015: </br> 264,100 pounds </br> Greenhouse gas emissions 2015: </br> 3,623,818 metric tons");
+
+var circle = L.circle([33.908126, -118.41074], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 300
+}).addTo(map);
+circle.bindPopup("<b>Chevron</b></br> Toxics Release Inventory air emissions 2015: </br> 264,100 pounds </br> Greenhouse gas emissions 2015: </br> 3,623,818 metric tons");
+
+
+// var marker = L.marker([33.8048, -118.2431], {icon: oilrefinery}).addTo(map);
+// marker.bindPopup("<b>Phillips 66 - Carson</b></br> Toxics Release Inventory air emissions 2015: </br> 55,845 pounds </br> Greenhouse gas emissions 2015: </br> 913,703 metric tons");
+
+var circle = L.circle([33.8048, -118.2431], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 100
+}).addTo(map);
+circle.bindPopup("<b>Phillips 66 - Carson</b></br> Toxics Release Inventory air emissions 2015: </br> 55,845 pounds </br> Greenhouse gas emissions 2015: </br> 913,703 metric tons");
+
+
+// var marker = L.marker([33.854967, -118.336907], {icon: oilrefinery}).addTo(map);
+// marker.bindPopup("<b>PBF/Torrance Refining Co.</b></br> Toxics Release Inventory air emissions 2015: </br> 165,405 pounds </br> Greenhouse gas emissions 2015: </br> 1,512,562 metric tons");
+
+var circle = L.circle([33.854967, -118.336907], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 200
+}).addTo(map);
+circle.bindPopup("<b>PBF/Torrance Refining Co.</b></br> Toxics Release Inventory air emissions 2015: </br> 165,405 pounds </br> Greenhouse gas emissions 2015: </br> 1,512,562 metric tons");
+
+
+// var marker = L.marker([33.7783, -118.2351], {icon: oilrefinery}).addTo(map);
+// marker.bindPopup("<b>Valero (Formerly Ultramar)</b></br> Toxics Release Inventory air emissions 2015: </br> 138,986 pounds </br> Greenhouse gas emissions 2015: </br> 890,085 metric tons");
+
+var circle = L.circle([33.7783, -118.2351], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 200
+}).addTo(map);
+circle.bindPopup("<b>Valero (Formerly Ultramar)</b></br> Toxics Release Inventory air emissions 2015: </br> 138,986 pounds </br> Greenhouse gas emissions 2015: </br> 890,085 metric tons");
+
+
+// markers for places
+var marker = new L.marker([33.792260, -118.252036], { opacity: 0.01 }); //opacity may be set to zero
+marker.bindTooltip("<h4>Wilmington</h4>", {permanent: true, className: "my_label", offset: [0, 0] });
+marker.addTo(map);
+
+var marker = new L.marker([33.835237, -118.258691], { opacity: 0.01 }); //opacity may be set to zero
+marker.bindTooltip("<h4>Carson</h4>", {permanent: true, className: "my_label", offset: [0, 0] });
+marker.addTo(map);
+
+	map.attributionControl.addAttribution('Data &copy; Center for Public Integrity analysis of U.S. Environmental Protection Agency data');
+
+
+
+</script>
+
+
+</body>
+</html>

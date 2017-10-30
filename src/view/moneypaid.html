@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://code.jquery.com/jquery-3.2.1.js"
+ integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+ crossorigin="anonymous"></script>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/heatmap.js"></script>
+<script src="https://code.highcharts.com/modules/treemap.js"></script>
+<script src="charts/chart.js"></script>
+
+<link type="text/css" rel="stylesheet" href="https://static-01-www.publicintegrity.org/files/css/css_87lQy8jg9CO8A0gDGkcMmXZ1TLokElBJX3hSS9y0o-Y.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://static-01-www.publicintegrity.org/files/css/css_RF40MzGmt1z7GjMZ3O7HdAYvFAadh30O4llmRpg5lXw.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://static-01-www.publicintegrity.org/files/css/css_waecEipJ-ge0SG7miDOvllB66n0H0U0uMZh523Zk8Ac.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://static-01-www.publicintegrity.org/files/css/css_FHXAPtlfTarNyOLfyiy2d1YuPUWtZNWGSm2HfDkOiHA.css" media="all" />
+<link type="text/css" rel="stylesheet" href="https://static-01-www.publicintegrity.org/sites/publici/modules/marketing/css/signup-form-collapsed.css?orrh91" media="all" />
+<link type="text/css" rel="stylesheet" href="https://static-01-www.publicintegrity.org/files/css/css_8hU3VF9C0nGaGbOzWpI6XB6x-nc2OlVfmL0Em6CGrO0.css" media="all" />
+
+</head>
+
+<body>
+
+<style>
+
+.svg_ferc {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.svg_ferc h2 {
+  padding-bottom: 8px;
+}
+.svg_ferc p {
+  margin-bottom: 0;
+  padding-bottom: 10px;
+}
+.graph {
+  max-width: 100%
+}
+</style>
+
+<div class="svg_ferc">
+</br>
+<h2> Total settlement refineries pay in civil penalties for violation of environmental laws and regulations </h2>
+</br>
+<div id="container" class="graph">
+
+<script>
+Highcharts.chart('container', {
+  tooltip: {
+        valuePrefix: '$'
+  },
+    legend: {
+         enabled: false
+     },
+     credits: {
+      enabled: false
+  },
+    colorAxis: {
+
+        minColor: '#fee0d2',
+        maxColor: '#67000d'
+    },
+    series: [{
+        type: 'treemap',
+
+        data: [{
+            name: 'BP WEST COAST PROD. LLC, CARSON REFINERY',
+            value: 82664844,
+            colorValue: 4
+        }, {
+            name: 'AIR LIQUIDE LARGE INDUSTRIES U.S., LP',
+            value: 92477,
+            colorValue: 1
+        }, {
+            name: 'PHILLIPS 66 COMPANY/LOS ANGELES REFINERY',
+            value: 372000,
+            colorValue: 1
+        }, {
+            name: 'ULTRAMAR INC',
+            value: 4998133,
+            colorValue: 2
+        }, {
+            name: 'CHEVRON PRODUCTS CO.',
+            value: 15977220,
+            colorValue: 3
+        },{
+            name: 'EXXON MOBIL OIL CORPORATION',
+            value: 28760125,
+            colorValue: 3
+        },{
+            name: 'CONOCOPHILLIPS COMPANY',
+            value: 3720250,
+            colorValue: 2
+        }, {
+            name: 'EQUILON ENTERPRISES, LLC',
+            value: 5829200,
+            colorValue: 2
+        }, {
+            name: 'TESORO REFINING & MARKETING CO, LLC',
+            value: 893000,
+            colorValue: 1
+        }]
+    }],
+    title: {
+        text: '  '
+    }
+
+});
+Highcharts.setOptions({
+		lang: {
+			thousandsSep: ','
+		}
+	});
+</script>
+<p style="font-size:80%;color:#666">Source: </p>
+
+<h2> Total settlement refineries pay in civil penalties for violation of environmental laws and regulations  </h2>
+</br>
+<p>  </p>
+<div id="container4" class="graph">
+<script>
+  Highcharts.chart('container4', {
+    colors: [
+    '#67000d', '#555855'
+    ],
+    credits: {
+        enabled: false
+    },
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: ' '
+    },
+    xAxis: {
+        categories: ['BP WEST COAST PROD. LLC, CARSON REFINERY',
+      'EXXON MOBIL OIL CORPORATION',
+      'CHEVRON PRODUCTS CO.',
+      'EQUILON ENTERPRISES, LLC',
+      'ULTRAMAR INC',
+      'CONOCOPHILLIPS COMPANY',
+      'TESORO REFINING & MARKETING CO, LLC',
+      'PHILLIPS 66 COMPANY/LOS ANGELES REFINERY',
+      'AIR LIQUIDE LARGE INDUSTRIES U.S., LP',
+    ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Total settlement',
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        }
+    },
+    tooltip: {
+      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+          '<td style="padding:0"><b>{point.y} </b></td></tr>',
+      footerFormat: '</table>',
+      shared: true,
+      useHTML: true
+  },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    tooltip: {
+          valuePrefix: '$'
+    },
+    series: [{
+        name: 'Total settlement',
+        data: [82664844,
+        28760125,
+        15977220,
+        5829200,
+        4998133,
+        3720250,
+        893000,
+        372000,
+        92477],
+    }]
+});
+</script>
+
+<p style="font-size:80%;color:#666"> Source:  </p>
+</div>
+</br>
+
+<h2> Total settlement refineries pay in civil penalties for violation of environmental laws and regulations  </h2>
+</br>
+<p>  </p>
+<div id="container5" class="graph">
+<script>
+  Highcharts.chart('container5', {
+    colors: [
+    '#67000d', '#555855'
+    ],
+    credits: {
+        enabled: false
+    },
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: ' '
+    },
+    xAxis: {
+        categories: ['BP WEST COAST PROD. LLC, CARSON REFINERY',
+      'EXXON MOBIL OIL CORPORATION',
+      'CHEVRON PRODUCTS CO.',
+      'EQUILON ENTERPRISES, LLC',
+      'ULTRAMAR INC',
+      'CONOCOPHILLIPS COMPANY',
+      'TESORO REFINING & MARKETING CO, LLC',
+      'PHILLIPS 66 COMPANY/LOS ANGELES REFINERY',
+      'AIR LIQUIDE LARGE INDUSTRIES U.S., LP',
+    ],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Total settlement',
+            align: 'high'
+        },
+
+            labels: {
+           overflow: 'justify'
+       }
+
+     },
+    tooltip: {
+      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+          '<td style="padding:0"><b>{point.y} </b></td></tr>',
+      footerFormat: '</table>',
+      shared: true,
+      useHTML: true
+  },
+
+    tooltip: {
+          valuePrefix: '$'
+    },
+
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Total settlement',
+        data:
+        [82664844,
+        28760125,
+        15977220,
+        5829200,
+        4998133,
+        3720250,
+        893000,
+        372000,
+        92477],
+    }]
+});
+</script>
+
+<p style="font-size:80%;color:#666"> Source:  </p>
+</div>
+</br>
+
+</div>
+</div>
